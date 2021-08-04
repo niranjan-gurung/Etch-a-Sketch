@@ -1,3 +1,14 @@
+/* Colour Palette:
+ *
+ * Terra Cotta: #ED6A5A
+ * Pale Spring Bud: #F4F1BB
+ * Opal: #9BC1BC
+ * Cadet Blue: #5CA4A9
+ * Alabaster: #E6EBE0
+ */
+
+/* implement display: grid for the drawing area instead of flexbox! */
+
 const GRID_SIZE = 16;
 const parent = document.getElementById('container');
 

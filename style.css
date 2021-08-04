@@ -10,11 +10,11 @@ body {
 }
 
 #container {
-  display: flex;
+  display: grid;
   height: 100%;
   width: 100%;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  grid-template-columns: repeat(16, 40px);
+  grid-template-rows: repeat(16, 40px);
   justify-content: center;
-  align-items: center;
+  align-content: center;
 }

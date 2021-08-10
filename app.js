@@ -20,7 +20,10 @@ for (let i = 0; i < GRID_SIZE; i++) {
 }
 
 const grid = document.querySelectorAll('#playGround .box');
+
 const clearBtn = document.getElementById('clear');
+const resizeBtn = document.getElementById('resize');  // need to implement
+const colourBtn = document.getElementById('colour');  // need to implement
 /* DRAWING ON GRID: */
 grid.forEach((box) => {
   box.addEventListener('mouseover', () => {

@@ -18,6 +18,12 @@ body {
   align-items: center;
 }
 
+#container header h1 {
+  margin-top: 0;
+  text-transform: uppercase;
+  color: #5ca4a9;
+}
+
 #clear {
   margin-bottom: 10px;
   width: auto;

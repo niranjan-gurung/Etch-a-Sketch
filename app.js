@@ -14,6 +14,7 @@ for (let i = 0; i < GRID_SIZE; i++) {
   for (let j = 0; j < GRID_SIZE; j++) {
     const newdiv = document.createElement('div');
     newdiv.classList.toggle('box');
+    newdiv.style.cssText = 'background-color: white';
     playGround.appendChild(newdiv);
   }
 }
@@ -26,7 +27,7 @@ grid.forEach((box) => {
     box.style.cssText = 'background-color: black';
   });
   clearBtn.addEventListener('click', () => {
-    box.style.cssText = '';
+    box.style.cssText = 'background-color: white';
   });
 });
 

@@ -1,32 +1,33 @@
-html, body {
+html,
+body {
   margin: 0;
-  padding: 0;
   height: 100%;
   width: 100%;
 }
 
 body {
-  background: #E6EBE0;
+  background: #e6ebe0;
 }
 
 #container {
-  /* display: flex; */
+  display: flex;
   height: 100%;
   width: 100%;
-  /* flex-direction: column;
-  align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #clear {
-  /* margin-top: 30px; */
+  margin-bottom: 10px;
+  width: auto;
 }
 
 #playGround {
   display: grid;
-  height: 100%;
-  width: 100%;
   grid-template-columns: repeat(16, 40px);
   grid-template-rows: repeat(16, 40px);
   justify-content: center;
   align-content: center;
+  border: 4px #ed6a5a solid;
 }

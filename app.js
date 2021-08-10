@@ -14,7 +14,6 @@ for (let i = 0; i < GRID_SIZE; i++) {
   for (let j = 0; j < GRID_SIZE; j++) {
     const newdiv = document.createElement('div');
     newdiv.classList.toggle('box');
-    newdiv.style.cssText = 'border: 1.5px solid #ED6A5A;';
     playGround.appendChild(newdiv);
   }
 }
@@ -24,13 +23,10 @@ const clearBtn = document.getElementById('clear');
 /* DRAWING ON GRID: */
 grid.forEach((box) => {
   box.addEventListener('mouseover', () => {
-    box.style.cssText = 'background-color: #9BC1BC';
+    box.style.cssText = 'background-color: black';
   });
   clearBtn.addEventListener('click', () => {
-    box.style.cssText = 'border: 1.5px solid #ED6A5A;';
+    box.style.cssText = '';
   });
-  // box.addEventListener('mouseout', () => {
-  //   box.style.cssText = 'border: 1.5px solid #ED6A5A;';
-  // });
 });
 

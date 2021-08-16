@@ -7,7 +7,7 @@
  * Alabaster: #E6EBE0
  */
 const GRID_SIZE = 16;
-const playGround = document.getElementById('playGround');
+const playGround = document.getElementById('playground');
 
 /* SETUP 16X16 GRID: */
 for (let i = 0; i < GRID_SIZE; i++) {
@@ -19,11 +19,11 @@ for (let i = 0; i < GRID_SIZE; i++) {
   }
 }
 
-const grid = document.querySelectorAll('#playGround .box');
+const grid = document.querySelectorAll('#playground .box');
 
-const clearBtn = document.getElementById('clear');
-const resizeBtn = document.getElementById('resize');  // need to implement
-const colourBtn = document.getElementById('colour');  // need to implement
+const clearBtn = document.querySelector('.clear');
+const resizeBtn = document.querySelector('.resize');  // need to implement
+const colourBtn = document.querySelector('.colour');  // need to implement
 /* DRAWING ON GRID: */
 grid.forEach((box) => {
   box.addEventListener('mouseover', () => {

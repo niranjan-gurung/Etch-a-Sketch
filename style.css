@@ -28,7 +28,7 @@ header h1 {
   color: #5ca4a9;
 }
 
-#buttons {
+.btn-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,12 +36,12 @@ header h1 {
   gap: 50px;
 }
 
-#buttons > *:hover {
+.btn-group > *:hover {
   background-color: #9bc1bc;
   cursor: pointer;
 }
 
-#buttons > * {
+.btn-group > * {
   width: 8em;
   border: none;
   background-color: #5ca4a9;
@@ -53,7 +53,7 @@ header h1 {
   padding: 15px 25px 15px 25px;
 }
 
-#playGround {
+#playground {
   display: grid;
   grid-template-columns: repeat(16, 30px);
   grid-template-rows: repeat(16, 30px);

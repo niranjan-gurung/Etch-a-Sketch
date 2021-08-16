@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
 *,
 *::before,
 *::after {
@@ -6,32 +8,44 @@
   margin: 0;
 }
 
+:root {
+  --header-text: #5ca4a9;
+  --bg-btn: #9bc1bc;
+  --btn-text: #ffffff;
+  --footer-text: #ed6a5a;
+  --drop-shadow: #838383;
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-  background: #e6ebe0;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 100px;
+  background: rgb(244, 241, 187);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 241, 187, 1) 0%,
+    rgba(230, 235, 224, 1) 100%
+  );
+  font-family: "Space Mono", monospace;
 }
 
 #container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 30px;
-  margin: 0 auto;
-  width: 50%;
+  gap: 260px;
+  margin: 0 260px 0 260px;
 }
 
 header h1 {
-  margin: 50px 0 50px 0;
-  font-size: 50px;
-  text-transform: uppercase;
+  margin: 60px 0;
+  font-size: 60px;
+  font-style: italic;
+  letter-spacing: 10px;
   text-align: center;
-  color: #5ca4a9;
+  color: var(--header-text);
 }
 
 .btn-group {
@@ -40,40 +54,40 @@ header h1 {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  width: 160px;
 }
 
 .btn-group > *:hover {
-  background-color: #9bc1bc;
+  background-color: var(--header-text);
   cursor: pointer;
 }
 
 .btn-group > * {
   width: 8em;
   border: none;
-  background-color: #5ca4a9;
-  color: white;
-  font-size: 14px;
+  background-color: var(--bg-btn);
+  color: var(--btn-text);
+  font-size: 20px;
   font-weight: bold;
-  text-transform: uppercase;
+  letter-spacing: 5px;
   border-radius: 30px;
   padding: 15px 25px 15px 25px;
+  box-shadow: 0px 3px 3px var(--drop-shadow);
 }
 
 #playground {
   display: grid;
   grid-template-columns: repeat(16, 35px);
   grid-template-rows: repeat(16, 35px);
-  justify-content: center;
-  align-content: center;
-  box-shadow: 0px 5px 5px #838383;
-  /* border: 4px #ed6a5a solid; */
+  box-shadow: 0px 5px 5px var(--drop-shadow);
 }
 
 footer h4 {
-  color: #ed6a5a;
+  color: var(--footer-text);
   position: absolute;
   text-align: center;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 10px;
   width: 100%;
   bottom: 0;
   left: 0;

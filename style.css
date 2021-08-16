@@ -6,9 +6,15 @@
   margin: 0;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background: #e6ebe0;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 100px;
 }
 
 #container {
@@ -34,6 +40,7 @@ header h1 {
   justify-content: center;
   align-items: center;
   gap: 50px;
+  width: 160px;
 }
 
 .btn-group > *:hover {
@@ -55,8 +62,8 @@ header h1 {
 
 #playground {
   display: grid;
-  grid-template-columns: repeat(16, 30px);
-  grid-template-rows: repeat(16, 30px);
+  grid-template-columns: repeat(16, 35px);
+  grid-template-rows: repeat(16, 35px);
   justify-content: center;
   align-content: center;
   border: 4px #ed6a5a solid;
@@ -64,5 +71,11 @@ header h1 {
 
 footer h4 {
   color: #5ca4a9;
+  position: absolute;
   text-align: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 10px 0;
+  font-size: 20px;
 }

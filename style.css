@@ -16,11 +16,6 @@
   --drop-shadow: #838383;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
   background: rgb(244, 241, 187);
   background: linear-gradient(
@@ -83,8 +78,6 @@ header h1 {
 
 #playground {
   display: grid;
-  grid-template-columns: repeat(16, 35px);
-  grid-template-rows: repeat(16, 35px);
   box-shadow: 0px 5px 5px var(--drop-shadow);
 }
 

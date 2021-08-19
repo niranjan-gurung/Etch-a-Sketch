@@ -11,26 +11,33 @@ const playGround = document.getElementById('playground');
 const clearBtn   = document.querySelector('.clear');
 const resizeBtn  = document.querySelector('.resize');
 const colourBtn  = document.querySelector('.colour');  // need to implement
+let gridSize = 16;
 
-function initGrid(GRID_SIZE) {
-  for (let i = 0; i < GRID_SIZE; i++) {
-    for (let j = 0; j < GRID_SIZE; j++) {
+function initGrid(gridSize) {
+  let cellWidth  = 36/gridSize + "rem";
+  let cellHeight = 36/gridSize + "rem";
+
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
       let newdiv = document.createElement('div');
       newdiv.classList.toggle('box');
       newdiv.style.cssText = 'background-color: white';
       playGround.appendChild(newdiv);
     }
   }
+  // set grid template col+rows to new grid values
+  document.getElementById("playground").style.gridTemplateColumns = (`repeat(${gridSize}, ${cellWidth})`);
+  document.getElementById("playground").style.gridTemplateRows    = (`repeat(${gridSize}, ${cellHeight})`);
 }
 
 /* SETUP DEFAULT 16X16 GRID: */
-initGrid(16);
+initGrid(gridSize);
 
-// grid gets all individual divs(boxes) as a nodelist:
-let grid = document.querySelectorAll('#playground .box');
+// grid = all individual divs(boxes) as a nodelist:
+let grids = document.querySelectorAll('#playground .box');
 /* DRAW ON MOUSE HOVER: */
 function drawGrid() {
-  grid.forEach((box) => {
+  grids.forEach((box) => {
     box.addEventListener('mouseover', () => {
       box.style.cssText = 'background-color: black';
     });
@@ -42,30 +49,36 @@ function drawGrid() {
 
 drawGrid();
 
-/* TODO: 
- * resizing should appropriately change pixel size of each single div,
- * so that the size of the entire grid stays the same,
- * but its pixel density inside is either increased or decreased. 
- */
-
 resizeBtn.addEventListener('click', () => {
-  const newGridSize = prompt('Enter a new grid size: ');
-  // if cancel is clicked: 
-  if (newGridSize == "" || newGridSize == null) 
+  gridSize = prompt('Enter a grid size (Max: 64x64): ');
+
+  // if cancel is clicked or invalid value is given: 
+  if (gridSize == "" || gridSize == null) 
     return;
-  else {
-    /* If valid resize value is entered:
-     * re-initialise with new grid size,
-     * re-select new amount of nodelist of divs,
-     * set grid template col+rows to new grid values,
-     * clear everything previously drawn on screen,
-     * redraw blank grid with new size.  
-     */
-    initGrid(newGridSize);    
-    grid = document.querySelectorAll('#playground .box');
-    document.getElementById("playground").style.gridTemplateColumns = (`repeat(${newGridSize}, 35px)`);
-    document.getElementById("playground").style.gridTemplateRows    = (`repeat(${newGridSize}, 35px)`);
-    grid.forEach((box) => box.style.cssText = 'background-color: white');
-    drawGrid();
+  else if (gridSize <= 0) {
+    alert("Number entered is below 0. Please enter a positive value.");
+    return;
   }
+  else if (gridSize > 64) {
+    alert("Number entered exceeds 64. Please enter a lower value.");
+    return;
+  }
+  
+  /* If valid resize value is entered then: */
+  // delete all current divs/boxes from container
+  while (playGround.firstChild) {
+    playGround.removeChild(playGround.firstChild);
+  }
+  
+  // re-initialise with new grid size
+  initGrid(gridSize);    
+  
+  // re-select new amount of nodelist of divs
+  grids = document.querySelectorAll('#playground .box');
+  
+  // clear everything previously drawn on screen
+  grids.forEach((box) => box.style.cssText = 'background-color: white');
+  
+  // redraw blank grid with new size
+  drawGrid();
 });

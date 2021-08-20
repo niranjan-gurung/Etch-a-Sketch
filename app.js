@@ -1,8 +1,13 @@
 const playGround = document.getElementById('playground');
 const clearBtn   = document.querySelector('.clear');
 const resizeBtn  = document.querySelector('.resize');
-const colourBtn  = document.querySelector('.colour');  // need to implement
+const colourBtn  = document.querySelector('.colour');
+
+let colourInput = document.querySelector('#colour-field'); // colour box
+
+// default values:
 let gridSize = 16;
+let penColour = 'black';
 
 function initGrid(gridSize) {
   let cellWidth  = 36/gridSize + "rem";
@@ -30,7 +35,7 @@ let grids = document.querySelectorAll('#playground .box');
 function drawGrid() {
   grids.forEach((box) => {
     box.addEventListener('mouseover', () => {
-      box.style.cssText = 'background-color: black';
+      box.style.cssText = `background-color: ${penColour}`;
     });
     clearBtn.addEventListener('click', () => {
       box.style.cssText = 'background-color: white';
@@ -72,4 +77,27 @@ resizeBtn.addEventListener('click', () => {
   
   // redraw blank grid with new size
   drawGrid();
+});
+
+/* HANDLE COLOUR EVENTS: */
+colourBtn.addEventListener('click', () => {
+  // when colour button is pressed, simultaneously click colour picker:
+  colourInput.click();
+
+  // if cancel is clicked or invalid value is given: 
+  if (penColour == "" || penColour == null) {
+    penColour = 'black';
+    // clear everything previously drawn on screen
+    grids.forEach((box) => box.style.cssText = 'background-color: white');
+    return;
+  }
+  
+  // clear everything previously drawn on screen
+  grids.forEach((box) => box.style.cssText = 'background-color: white');
+});
+
+// change pencolour from the colour field/box:
+colourInput.addEventListener('input', () => {
+  let colour = colourInput.value;
+  penColour = colour;
 });

@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
 
-  <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-</head>
-
-<body>
-  <header>
-    <h1>Etch-A-Sketch</h1>
-  </header>
-  <main id="container">
-    <div class="btn-group">
-      <button class="clear">Clear</button>
-      <button class="resize">Resize</button>
-      <button class="colour">Colour</button>
+  <body>
+    <header>
+      <h1>Etch-A-Sketch</h1>
+    </header>
+    <main id="container">
+      <div class="btn-group">
+        <button class="clear">Clear</button>
+        <button class="resize">Resize</button>
+        <button class="colour">Colour</button>
+      </div>
+      <section id="playground"></section>
+    </main>
+    <div class="colour-container">
+      <input type="color" id="colour-field" />
     </div>
-    <section id="playground">
-
-    </section>
-  </main>
-  <footer>
-    <h4>Made By Niranjan Gurung</h4>
-  </footer>
-</body>
-
+    <footer>
+      <h4>Made By Niranjan Gurung</h4>
+    </footer>
+  </body>
 </html>

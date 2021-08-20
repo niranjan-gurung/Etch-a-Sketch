@@ -85,8 +85,10 @@ header h1 {
   box-shadow: 0px 3px 3px var(--drop-shadow);
 }
 
-/* #colour-field {
-} */
+#colour-field {
+  margin-left: 31em;
+  visibility: hidden;
+}
 
 #playground {
   display: grid;
